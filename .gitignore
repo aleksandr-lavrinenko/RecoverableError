@@ -1,0 +1,5 @@
+Pods/*
+ManyChat.xcworkspace/xcuserdata/*
+ManyChat.xcodeproj/xcuserdata/*
+.DS_Store
+*.generated.swift
