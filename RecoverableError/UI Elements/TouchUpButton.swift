@@ -12,7 +12,8 @@ class TouchAppButton: UIButton {
 	var touchUpInsideBlock: (() -> Void)?
 
 	convenience init(touchUpInsideBlock: (() -> Void)?) {
-		self.init(frame: .zero)
+		self.init(type: .system)
+
 		self.touchUpInsideBlock = touchUpInsideBlock
 	}
 	required init?(coder aDecoder: NSCoder) {
@@ -22,6 +23,10 @@ class TouchAppButton: UIButton {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		_setupButton()
+	}
+
+	override var intrinsicContentSize: CGSize {
+		return CGSize(width: UIScreen.main.bounds.width, height: 48)
 	}
 
 	private func _setupButton() {

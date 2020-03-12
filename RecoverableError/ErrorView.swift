@@ -10,10 +10,29 @@ import UIKit
 
 final class ErrorView: UIView {
 	// MARK: - UI
-	private let _titleLabel: UILabel = UILabel()
-	private let _descriptionLabel: UILabel = UILabel()
-	private let _infoImageView: UIImageView = UIImageView()
-	private let _buttonsStackView: UIStackView = UIStackView()
+	private let _titleLabel: UILabel = {
+		let titleLabel = UILabel()
+		titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
+		titleLabel.textAlignment = .center
+		return titleLabel
+	}()
+	private let _descriptionLabel: UILabel = {
+		let descriptionLabel = UILabel()
+		descriptionLabel.font = UIFont.systemFont(ofSize: 16)
+		descriptionLabel.textAlignment = .center
+		return descriptionLabel
+	}()
+	private let _infoImageView: UIImageView = {
+		let imageView = UIImageView()
+		imageView.contentMode = .scaleAspectFit
+		return imageView
+	}()
+	private let _buttonsStackView: UIStackView = {
+		let stackView = UIStackView()
+		stackView.axis = .vertical
+		stackView.spacing = 8
+		return stackView
+	}()
 
 	// MARK: - Lifecycle
 	convenience init(title: String?, description: String?, actions: [ErrorView.Action]) {
@@ -26,10 +45,11 @@ final class ErrorView: UIView {
 			let button = RecoverableButton(touchUpInsideBlock: action.action)
 			button.setTitle(action.title, for: .normal)
 			button.touchUpInsideBlock = action.action
+
 			_setup(button: button)
 			_buttonsStackView.addArrangedSubview(button)
 		}
-		_infoImageView.image = nil
+		_infoImageView.image = UIImage(named: "img_tech_work")
 	}
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -47,26 +67,7 @@ final class ErrorView: UIView {
 		addSubview(_infoImageView)
 		addSubview(_buttonsStackView)
 
-		_setup(titleLabel: _titleLabel)
-		_setup(descriptionLabel: _descriptionLabel)
-		_setup(stackView: _buttonsStackView)
-
 		_setupContraints()
-	}
-
-	private func _setup(titleLabel: UILabel) {
-		titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
-		titleLabel.textAlignment = .center
-	}
-
-	private func _setup(descriptionLabel: UILabel) {
-		descriptionLabel.font = UIFont.systemFont(ofSize: 14)
-		descriptionLabel.textAlignment = .center
-	}
-
-	private func _setup(stackView: UIStackView) {
-		stackView.axis = .vertical
-		stackView.spacing = 8
 	}
 
 	private func _setup(button: UIButton) {

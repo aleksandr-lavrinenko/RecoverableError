@@ -20,20 +20,20 @@ final class Service { }
 
 extension Service: ServiceInput {
 	@discardableResult
-	func requestObject(completionHandler: @escaping ((Result<Bool, Error>) -> Void)) -> Task {
-		return Task {
-			completionHandler(.failure(NetworkError.internetError))
+		func requestObject(completionHandler: @escaping ((Result<Bool, Error>) -> Void)) -> Task {
+			return Task {
+				completionHandler(.failure(NetworkError.internetError))
+			}
+			.delayedTask(time: 0.5)
+			.run()
 		}
-		.delayedTask(time: 0.3)
-		.run()
-	}
 
 	@discardableResult
 	func runOfSpace(completionHandler: @escaping ((Result<Bool, Error>) -> Void)) -> Task {
 		return Task {
 			completionHandler(.failure(NetworkError.internetError))
 		}
-		.delayedTask(time: 0.3)
+		.delayedTask(time: 0.5)
 		.run()
 	}
 }

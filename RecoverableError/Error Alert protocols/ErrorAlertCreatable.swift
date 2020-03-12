@@ -13,6 +13,7 @@ protocol ErrorAlertCreatable: class, ErrorReasonExtractable {
 	func createOKAlert(with text: String) -> UIAlertController
 }
 
+
 // MARK: - Default implementation
 extension ErrorAlertCreatable where Self: UIViewController {
 	func createAlert(for error: Error, aboveAll: Bool) -> UIAlertController {
@@ -61,4 +62,3 @@ extension ErrorAlertCreatable where Self: UIViewController {
 extension UIAlertAction {
 	static let okAction = UIAlertAction(title: "OK", style: .cancel) { (_) -> Void in }
 }
-

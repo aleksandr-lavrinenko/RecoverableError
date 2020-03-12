@@ -27,8 +27,6 @@ extension ErrorViewCreatable {
 				title: localizedError.errorDescription ?? defaultTitle,
 				message: description)
 		}
-
-
 		return createErrorView(title: defaultTitle, message: description)
 	}
 

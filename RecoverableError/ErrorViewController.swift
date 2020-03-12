@@ -20,6 +20,11 @@ final class ErrorViewController: UIViewController {
 			tableView.separatorStyle = .none
 		}
 	}
+	@IBOutlet weak var indicatorView: UIActivityIndicatorView! {
+		didSet {
+			indicatorView.isHidden = true
+		}
+	}
 	
 	// MARK: - Actions
 	@IBAction func didPressedErrorViewButton(_ button: UIButton) {
@@ -28,19 +33,28 @@ final class ErrorViewController: UIViewController {
 
 	// MARK: Networking
 	func requestFeed() {
-		self.showErrorButton.isHidden = true
+		showErrorButton.isHidden = true
+		indicatorView.isHidden = false
+		indicatorView.startAnimating()
 		service.requestObject { [weak self] (result) in
 			guard let `self` = self else { return }
+			DispatchQueue.main.async {
+				self.indicatorView.isHidden = true
+				self.indicatorView.stopAnimating()
+			}
 			switch result {
 			case .success:
 				break
 			case .failure(let error):
 				DispatchQueue.main.async {
-					let recoverableError = RecoverableError(error: error, attempter: .tryAgainAttempter(block: {
+					let tryAgainOption = RecoveryOptions.tryAgain {
 						self.removeErrorView()
 						self.showErrorButton.isHidden = false
 						self.requestFeed()
-					}))
+					}
+					let recoverableError = RecoverableError(
+						error: error,
+						attempter: .init(recoveryOptions: [tryAgainOption]))
 					self.presentErrorView(from: recoverableError)
 				}
 			}

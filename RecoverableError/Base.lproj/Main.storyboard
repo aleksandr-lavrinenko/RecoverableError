@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2bo-d5-djl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Error View-->
+        <scene sceneID="rRp-Rq-cdC">
+            <objects>
+                <viewController id="TbL-Ve-DNc" customClass="ErrorViewController" customModule="RecoverableError" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nBc-kV-pTK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZxP-mr-aha">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4yV-1G-Qt9">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQO-Zg-KQs">
+                                <rect key="frame" x="150.5" y="433" width="113" height="30"/>
+                                <state key="normal" title="Show Error View"/>
+                                <connections>
+                                    <action selector="didPressedErrorViewButton:" destination="TbL-Ve-DNc" eventType="touchUpInside" id="IdM-tN-hkN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CQO-Zg-KQs" firstAttribute="centerY" secondItem="nBc-kV-pTK" secondAttribute="centerY" id="7id-9h-WNu"/>
+                            <constraint firstItem="ZxP-mr-aha" firstAttribute="leading" secondItem="ZBW-pO-uIK" secondAttribute="leading" id="8eI-8b-Rpp"/>
+                            <constraint firstItem="CQO-Zg-KQs" firstAttribute="centerX" secondItem="nBc-kV-pTK" secondAttribute="centerX" id="DvR-xv-UoR"/>
+                            <constraint firstItem="4yV-1G-Qt9" firstAttribute="centerX" secondItem="nBc-kV-pTK" secondAttribute="centerX" id="JNf-B8-xok"/>
+                            <constraint firstItem="ZBW-pO-uIK" firstAttribute="trailing" secondItem="ZxP-mr-aha" secondAttribute="trailing" id="O1N-L2-d5r"/>
+                            <constraint firstItem="ZxP-mr-aha" firstAttribute="top" secondItem="ZBW-pO-uIK" secondAttribute="top" id="Tkj-LH-QIL"/>
+                            <constraint firstItem="4yV-1G-Qt9" firstAttribute="centerY" secondItem="nBc-kV-pTK" secondAttribute="centerY" id="Z9J-nO-EIj"/>
+                            <constraint firstAttribute="bottom" secondItem="ZxP-mr-aha" secondAttribute="bottom" constant="83" id="rKE-AU-Fws"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZBW-pO-uIK"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Error View" id="mYb-Bp-Ovv"/>
+                    <connections>
+                        <outlet property="indicatorView" destination="4yV-1G-Qt9" id="DE4-WM-9St"/>
+                        <outlet property="showErrorButton" destination="CQO-Zg-KQs" id="qlR-Y4-XLI"/>
+                        <outlet property="tableView" destination="ZxP-mr-aha" id="f8M-pH-gbb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIn-ck-jIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1237" y="-270"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZGY-xG-rMI">
+            <objects>
+                <tabBarController id="2bo-d5-djl" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BLR-nF-2fK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="16u-TC-Nzz"/>
+                        <segue destination="TbL-Ve-DNc" kind="relationship" relationship="viewControllers" id="ijP-rf-mYh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-Ce-ZS5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2156" y="-595"/>
+        </scene>
+        <!--Alert-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecoverableError" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfp-QV-IjI">
+                                <rect key="frame" x="156" y="431.5" width="102" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Internet error"/>
+                                <connections>
+                                    <action selector="didPressedInternetErrorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VXp-OV-Gbc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRe-ZL-Obb">
+                                <rect key="frame" x="136.5" y="500.5" width="141" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Not enough space"/>
+                                <connections>
+                                    <action selector="didPressedNotEnoughSpaceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zwy-Mj-wqE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uRe-ZL-Obb" firstAttribute="centerX" secondItem="Kfp-QV-IjI" secondAttribute="centerX" id="81R-KI-j6n"/>
+                            <constraint firstItem="Kfp-QV-IjI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="De0-QS-hjq"/>
+                            <constraint firstItem="uRe-ZL-Obb" firstAttribute="top" secondItem="Kfp-QV-IjI" secondAttribute="bottom" constant="36" id="QE5-sI-qzg"/>
+                            <constraint firstItem="Kfp-QV-IjI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gwz-iW-0z9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Alert" id="psJ-l5-hXe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1238" y="-984"/>
+        </scene>
+    </scenes>
+</document>

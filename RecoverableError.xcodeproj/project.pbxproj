@@ -16,8 +16,6 @@
 		E216115323F91C3800855356 /* ErrorAlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216113D23F91C3700855356 /* ErrorAlertPresentable.swift */; };
 		E216115423F91C3800855356 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216113E23F91C3700855356 /* ErrorView.swift */; };
 		E216115523F91C3800855356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E216113F23F91C3700855356 /* Assets.xcassets */; };
-		E216115623F91C3800855356 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E216114123F91C3800855356 /* LaunchScreen.storyboard */; };
-		E216115723F91C3800855356 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E216114323F91C3800855356 /* Main.storyboard */; };
 		E216115823F91C3800855356 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216114623F91C3800855356 /* AppDelegate.swift */; };
 		E216115923F91C3800855356 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216114723F91C3800855356 /* ErrorViewController.swift */; };
 		E216115A23F91C3800855356 /* RecoveryAttemper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216114923F91C3800855356 /* RecoveryAttemper.swift */; };
@@ -30,6 +28,8 @@
 		E216116623F91C4600855356 /* TouchUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216116423F91C4600855356 /* TouchUpButton.swift */; };
 		E216116A23F9227700855356 /* ButtonCornerRadiusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216116923F9227700855356 /* ButtonCornerRadiusable.swift */; };
 		E26567D823F9244100CA18AD /* RecoverableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26567D723F9244100CA18AD /* RecoverableButton.swift */; };
+		E27B693B243B27E200FC9255 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27B6937243B27E200FC9255 /* LaunchScreen.storyboard */; };
+		E27B693C243B27E200FC9255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27B6939243B27E200FC9255 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +44,6 @@
 		E216113D23F91C3700855356 /* ErrorAlertPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertPresentable.swift; sourceTree = "<group>"; };
 		E216113E23F91C3700855356 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		E216113F23F91C3700855356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E216114223F91C3800855356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E216114423F91C3800855356 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		E216114623F91C3800855356 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E216114723F91C3800855356 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E216114923F91C3800855356 /* RecoveryAttemper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveryAttemper.swift; sourceTree = "<group>"; };
@@ -58,6 +56,8 @@
 		E216116423F91C4600855356 /* TouchUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchUpButton.swift; sourceTree = "<group>"; };
 		E216116923F9227700855356 /* ButtonCornerRadiusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCornerRadiusable.swift; sourceTree = "<group>"; };
 		E26567D723F9244100CA18AD /* RecoverableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverableButton.swift; sourceTree = "<group>"; };
+		E27B6938243B27E200FC9255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E27B693A243B27E200FC9255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +90,10 @@
 		E216112023F91BF900855356 /* RecoverableError */ = {
 			isa = PBXGroup;
 			children = (
+				E27B6936243B27E200FC9255 /* Base.lproj */,
 				E216116823F921FA00855356 /* UI Elements */,
 				E216115E23F91C4100855356 /* Services */,
 				E216114523F91C3800855356 /* Application */,
-				E216114023F91C3800855356 /* Base.lproj */,
 				E216113623F91C3700855356 /* Error Alert protocols */,
 				E216114823F91C3800855356 /* Errors */,
 				E216113E23F91C3700855356 /* ErrorView.swift */,
@@ -116,16 +116,6 @@
 				E216113D23F91C3700855356 /* ErrorAlertPresentable.swift */,
 			);
 			path = "Error Alert protocols";
-			sourceTree = "<group>";
-		};
-		E216114023F91C3800855356 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				E216114123F91C3800855356 /* LaunchScreen.storyboard */,
-				E216114323F91C3800855356 /* Main.storyboard */,
-			);
-			name = Base.lproj;
-			path = ../../../Documents/RecoverableError_2/RecoverableError/Base.lproj;
 			sourceTree = "<group>";
 		};
 		E216114523F91C3800855356 /* Application */ = {
@@ -165,6 +155,15 @@
 				E26567D723F9244100CA18AD /* RecoverableButton.swift */,
 			);
 			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		E27B6936243B27E200FC9255 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				E27B6937243B27E200FC9255 /* LaunchScreen.storyboard */,
+				E27B6939243B27E200FC9255 /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +225,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E216115723F91C3800855356 /* Main.storyboard in Resources */,
+				E27B693C243B27E200FC9255 /* Main.storyboard in Resources */,
 				E216115523F91C3800855356 /* Assets.xcassets in Resources */,
-				E216115623F91C3800855356 /* LaunchScreen.storyboard in Resources */,
+				E27B693B243B27E200FC9255 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,18 +264,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E216114123F91C3800855356 /* LaunchScreen.storyboard */ = {
+		E27B6937243B27E200FC9255 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E216114223F91C3800855356 /* Base */,
+				E27B6938243B27E200FC9255 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		E216114323F91C3800855356 /* Main.storyboard */ = {
+		E27B6939243B27E200FC9255 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E216114423F91C3800855356 /* Base */,
+				E27B693A243B27E200FC9255 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
